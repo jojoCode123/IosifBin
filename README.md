@@ -1,7 +1,9 @@
 # IosifBin
 A new encoding format called IosifBin (not to be used as a practical encoding scheme)
 
-Bytes are encoded into strings of type "iosifbin"
+Data and files can be encoded into strings of type "iosifbin"
+
+Bytes are represented as the following:
 
 |128  |64   |32   |16   |8    |4    |2    |1    |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|

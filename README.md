@@ -1,5 +1,5 @@
 # IosifBin
-A new encoding format called IosifBin (not to be used a practical encoding scheme)
+A new encoding format called IosifBin (not to be used as a practical encoding scheme)
 
 Bytes are encoded into strings of type "iosifbin"
 

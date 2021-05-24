@@ -4,12 +4,16 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build",
+            "label": "linux build",
             "type": "shell",
             "command": "g++ -o bin/iosifbin src/iosifbin.cpp -I include/ -g3",
             "problemMatcher": [
                 "$gcc"
-            ]
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }

@@ -1,7 +1,7 @@
 # IosifBin
 A new encoding format called IosifBin (not to be used as a practical encoding scheme)
 
-###Scheme
+### Scheme
 Data and files can be encoded into strings of type "iosifbin"
 
 Bytes are represented as the following:
@@ -22,9 +22,9 @@ Capital letters represent a 1 and lower-case represent a 0; For e.g.:
 For those who ask why create such an impratical encoding scheme:
 Why not?
 
-###Usage
-#####Encoding
+### Usage
+##### Encoding
 `./iosifbin encode /path/to/input.txt /path/to/output.txt`
 
-#####Decoding
+##### Decoding
 `./iosifbin decode /path/to/input.txt path/to/output.txt`

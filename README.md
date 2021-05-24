@@ -22,13 +22,20 @@ Capital letters represent a 1 and lower-case represent a 0; For e.g.:
 For those who ask why create such an impratical encoding scheme:
 Why not?
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 347ebec392d6a2ebeb3f24d913ce6db9a17aec75
 ### Installation
 ```
 git clone https://github.com/jojoCode123/IosifBin
 cd IosifBin
 make
+<<<<<<< HEAD
 sudo make install
+=======
+make install
+>>>>>>> 347ebec392d6a2ebeb3f24d913ce6db9a17aec75
 ```
 
 ### Usage

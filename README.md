@@ -22,9 +22,17 @@ Capital letters represent a 1 and lower-case represent a 0; For e.g.:
 For those who ask why create such an impratical encoding scheme:
 Why not?
 
+### Installation
+```
+git clone https://github.com/jojoCode123/IosifBin
+cd IosifBin
+make
+sudo make install
+```
+
 ### Usage
-##### Encoding
+#### Encoding
 `./iosifbin encode /path/to/input.txt /path/to/output.txt`
 
-##### Decoding
+#### Decoding
 `./iosifbin decode /path/to/input.txt path/to/output.txt`

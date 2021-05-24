@@ -167,7 +167,7 @@ void decode(const char *input_file, const char *output_file)
 int main(int argc, char *argv[])
 {
     const char *usage_menu = "Usage: \n"
-        "\t./iosifbin [encode|decode] input-filename output-filename\n";
+        "\tiosifbin [encode|decode] input-filename output-filename";
 
     if(argc != 4)
     {

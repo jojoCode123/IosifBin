@@ -13,6 +13,17 @@ u_int64_t get_file_size(FILE *file)
     return size;
 }
 
+int check_magic_bytes(FILE *file)
+{
+    char file_magic_bytes[6];
+    char magic_bytes[6] = {0x01, 0x00, 0x05, 0x01, 0x0f, 0x00};
+
+    fseek(file, 0, 0);
+    fread(file_magic_bytes, 6, 1, file);
+
+    return memcmp(file_magic_bytes, magic_bytes, 6);
+}
+
 char *encode_byte(u_int8_t value)
 {
     static char result[9];
@@ -95,6 +106,7 @@ void encode(const char *input_file, const char *output_file)
     u_int64_t input_file_size;
     u_int64_t nchunks;
     u_int64_t leftover;
+    char magic_bytes[6] = {0x01, 0x00, 0x05, 0x01, 0x0f, 0x00};
 
     if(!input_stream)
     {
@@ -111,6 +123,8 @@ void encode(const char *input_file, const char *output_file)
     input_file_size = get_file_size(input_stream);
     nchunks = input_file_size / CHUNK_SIZE;
     leftover = input_file_size % CHUNK_SIZE;
+
+    fwrite(magic_bytes, 6, 1, output_stream);
 
     for(u_int64_t i = 0; i < nchunks; i++)
     {
@@ -148,9 +162,17 @@ void decode(const char *input_file, const char *output_file)
         exit(1);
     }
 
+    if(check_magic_bytes(input_stream))
+    {
+        puts("Invalid or corrupt input file.");
+        exit(1);
+    }
+
     input_file_size = get_file_size(input_stream);
+    input_file_size -= 6;
     nchunks = (input_file_size / 9) / CHUNK_SIZE;
     leftover = (input_file_size / 9) % CHUNK_SIZE;
+    fseek(input_stream, 6, 0);
 
     for(u_int64_t i = 0; i < nchunks; i++)
     {

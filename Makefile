@@ -8,3 +8,7 @@ build:
 
 install: build
 	cp $(OUTPUTDIR)/iosifbin /usr/bin/iosifbin
+
+debug:
+	mkdir -p debug
+	g++ $(SRCDIR)/iosifbin.cpp -o debug/iosifbin -I $(INCLUDEDIR) -g3
